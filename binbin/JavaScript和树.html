@@ -117,12 +117,21 @@ var btn=document.getElementsByTagName("input"),
 	}
 	// 前序法，顺序是根-左-右
 	function preOrder(node){
-		if(!(node==null)){
-			allarray.push(node);
+		// if(!(node==null)){
+		// 	allarray.push(node);
 	
-			preOrder(node.firstElementChild);
-			preOrder(node.lastElementChild);
-		}
+		// 	preOrder(node.firstElementChild);
+		// 	preOrder(node.lastElementChild);
+		// }
+
+    allarray.push(node);
+  for (var i = 0; i < node.childElementCount; i++)
+  {
+    if (node.children[i] != null)
+      preOrder(node.children[i]);
+  }
+ 
+
 		
 	}
   // 中序法，顺序是左-根-右

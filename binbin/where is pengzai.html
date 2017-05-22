@@ -93,8 +93,6 @@
         <input type="button" id="preorder" value="前序遍历">
         <input type="button" id="postorder" value="后序遍历">
     </div> -->
-
-    <script type="text/Javascript" src="task8.js"></script>
 </body>
 
 </html>
@@ -106,12 +104,16 @@ var inAnimation = false;
 
 //先序遍历查找
 function preOrder(root) {
-  orderQueue.push(root);
+
+      orderQueue.push(root);
   for (var i = 0; i < root.childElementCount; i++)
   {
     if (root.children[i] != null)
       preOrder(root.children[i]);
   }
+ 
+
+
 }
 
 //后序遍历
@@ -127,9 +129,11 @@ function postOrder(root) {
 //多叉树遍历的结果存放在 orderQueue 中，在这个队列中寻找 queryWord
 function render(queryWord) {
   if (inAnimation) {
-    alert('呵呵 ');
+      alert('呵呵 ');
     return;
+  
   }
+  
 
   inAnimation = true;
   var i = 0;
